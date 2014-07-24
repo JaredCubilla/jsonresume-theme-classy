@@ -2,6 +2,9 @@ var fs = require('fs');
 var gravatar = require('gravatar');
 var _ = require('lodash')
 var Mustache = require('mustache');
+var schema = require('resume-schema');
+
+var resumeObject = schema.resumeJson; 
 
 function render(resumeObject) {
 
