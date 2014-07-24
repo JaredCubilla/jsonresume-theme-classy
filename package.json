@@ -7,11 +7,22 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jared Cubilla",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "gravatar": "^1.0.6",
     "lodash": "^2.4.1",
     "mustache": "^0.8.2",
     "tarball-extract": "0.0.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JaredCubilla/jsonresume-theme-classy.git"
+  },
+  "keywords": [
+    "json"
+  ],
+  "bugs": {
+    "url": "https://github.com/JaredCubilla/jsonresume-theme-classy/issues"
+  },
+  "homepage": "https://github.com/JaredCubilla/jsonresume-theme-classy"
 }
