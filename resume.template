@@ -162,12 +162,14 @@
 					<h3>{{position}}, {{company}}</h3>
 					<h4>{{startDateYear}} - {{endDateYear}}</h4>
 					<p>{{summary}}</p>
+					{{#workHighlights}}
 					<h4>HIGHLIGHTS</h4>
 					<ul>
 						{{#highlights}}
 						<li>{{.}}</li>
 						{{/highlights}}
 					</ul>
+					{{/workHighlights}}
 				</div>
 			{{/work}}
 		</div>
