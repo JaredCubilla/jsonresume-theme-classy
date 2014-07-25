@@ -105,16 +105,16 @@
 		}
 		@media (max-width: 500px) {
 			p {
-				font-size:1.3em;
+				font-size:1.2em;
 			}
 			li {
-				font-size:1.3em;
+				font-size:1.2em;
 			}
 			blockquote {
-				font-size:1.3em;
+				font-size:1.2em;
 			}
 			h2 {
-				font-size:2.5em;
+				font-size:2.3em;
 			}
 		}
     </style>
@@ -124,29 +124,37 @@
 	<div class= "header">
 		<h1>{{bio.capitalName}}</h1>
 		<div id= "contact">
+			{{#emailBool}}
 			<div class= "contact-header">
 				EMAIL
 			</div>
 			<a href= "mailto:{{bio.email.personal}}" target= "_blanks">{{bio.email.personal}}</a>
+			{{/emailBool}}
+			{{#phoneBool}}
 			<div class= "contact-header">
 				<br>PHONE
 			</div>
 			{{bio.phone.personal}}
+			{{/phoneBool}}
 		</div>
 		<br>
 		<div id= "profiles">
-			<a href="https://www.twitter.com/{{bio.profiles.twitter}}" target= "_blank"><i class= "fa fa-twitter-square"></i></a>
-			<a href="https://www.github.com/{{bio.profiles.github}}" target= "_blank"><i class= "fa fa-github-square"></i></a>
-			<a href="{{bio.websites.blog}}" target= "_blank"><i class= "fa fa-rss-square"></i></a>
+			{{#twitterBool}}
+			<a href="https://www.twitter.com/{{bio.profiles.twitter}}" target= "_blank"><i class= "fa fa-twitter-square"></i></a>{{.twitterBool}}
+			{{#githubBool}}<a href="https://www.github.com/{{bio.profiles.github}}" target= "_blank"><i class= "fa fa-github-square"></i></a>{{/githubBool}}
+			{{#blogBool}}<a href="{{bio.websites.blog}}" target= "_blank"><i class= "fa fa-rss-square"></i></a>{{/blogBool}}
 		</div>		
 	</div>
 	<div class= "main">
+		{{#aboutBool}}
 		<div id= "about">
 			<h2><i class= "fa fa-user left"></i> ABOUT</h2>
 			<p>
 				{{bio.summary}}
 			</p>
 		</div>
+		{{/aboutBool}}
+		{{#workBool}}
 		<div id= "work">
 			<h2><i class= "fa fa-suitcase left"></i> WORK EXPERIENCE</h2>
 			{{#work}}
@@ -163,6 +171,8 @@
 				</div>
 			{{/work}}
 		</div>
+		{{/workBool}}
+		{{#skillsBool}}
 		<div id= "skills">
 			<h2><i class= "fa fa-tasks left"></i> SKILLS</h2>
 			{{#skills}}
@@ -172,6 +182,8 @@
 				{{/keywords}}
 			{{/skills}}
 		</div><br>
+		{{/skillsBool}}
+		{{#educationBool}}
 		<div id= "education">
 			<h2><i class= "fa fa-graduation-cap left"></i> EDUCATION</h2>
 			{{#education}}
@@ -185,6 +197,8 @@
 				</ul>
 			{{/education}}
 		</div>
+		{{/educationBool}}
+		{{#awardsBool}}
 		<div id= "awards">
 			<h2><i class= "fa fa-trophy left"></i> AWARDS</h2>
 			{{#awards}}
@@ -192,6 +206,8 @@
 				<h4>{{day}} {{month}} {{year}}</h4>
 			{{/awards}}
 		</div>
+		{{/awardsBool}}
+		{{#publicationsBool}}
 		<div id= "publications">
 			<h2><i class= "fa fa-book left"></i> PUBLICATIONS</h2>
 			{{#publications}}
@@ -200,6 +216,8 @@
 				<p><a href= "{{website}}" target= "_blank">{{website}}</a></p>
 			{{/publications}}
 		</div>
+		{{/publicationsBool}}
+		{{#referencesBool}}
 		<div id= "references">
 			<h2><i class= "fa fa-thumbs-up left"></i> REFERENCES</h2>
 			{{#references}}
@@ -209,6 +227,8 @@
 			</blockquote><br>
 			{{/references}}
 		</div>
+		{{/referencesBool}}
+
 	</div>
   </body>
 </html>

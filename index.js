@@ -11,6 +11,53 @@ var resumeObject = schema.resumeJson;
 
 function render(resumeObject) {
 
+	if (resumeObject.bio.email) {
+		resumeObject.emailBool = true;
+	}
+
+	if (resumeObject.bio.phone) {
+		resumeObject.phoneBool = true;
+	}
+
+	if (resumeObject.bio.profiles.twitter) {
+		resumeObject.twitterBool = true;
+	}
+
+	if (resumeObject.bio.profiles.github) {
+		resumeObject.githubBool = true;
+	}
+
+	if (resumeObject.bio.websites.blog) {
+		resumeObject.blogBool = true;
+	}
+
+	if (resumeObject.bio.summary) {
+		resumeObject.aboutBool = true;
+	}
+
+	if (resumeObject.work) {
+		resumeObject.workBool = true;
+	}
+
+	if (resumeObject.education) {
+		resumeObject.educationBool = true;
+	}
+
+	if (resumeObject.awards) {
+		resumeObject.awardsBool = true;
+	}
+
+	if (resumeObject.publications) {
+		resumeObject.publicationsBool = true;
+	}
+
+	if (resumeObject.skills) {
+		resumeObject.skillsBool = true;
+	}
+
+	if (resumeObject.references) {
+		resumeObject.referencesBool = true;
+	}
 
 	_.each(resumeObject.work, function(w){
 		w.startDateYear = (w.startDate || "").substr(0,4);
