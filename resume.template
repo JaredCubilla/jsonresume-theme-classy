@@ -140,7 +140,7 @@
 		<br>
 		<div id= "profiles">
 			{{#twitterBool}}
-			<a href="https://www.twitter.com/{{bio.profiles.twitter}}" target= "_blank"><i class= "fa fa-twitter-square"></i></a>{{.twitterBool}}
+			<a href="https://www.twitter.com/{{bio.profiles.twitter}}" target= "_blank"><i class= "fa fa-twitter-square"></i></a>{{/twitterBool}}
 			{{#githubBool}}<a href="https://www.github.com/{{bio.profiles.github}}" target= "_blank"><i class= "fa fa-github-square"></i></a>{{/githubBool}}
 			{{#blogBool}}<a href="{{bio.websites.blog}}" target= "_blank"><i class= "fa fa-rss-square"></i></a>{{/blogBool}}
 		</div>		
