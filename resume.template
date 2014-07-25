@@ -5,11 +5,210 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{bio.firstName}} {{bio.lastName}}</title>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans' rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+		body {
+			font-size: 62.5%;
+			font-family: "Montserrat";
+			color: #333333;
+		}
+		a {
+			color: #333333;
+			text-decoration: none;
+		}
+		a:visited {
+			color: #4e4e4e;
+		}
+		a:hover {
+			color: #4e4e4e;
+			text-decoration: underline;
+		}
+		
+		.header {
+			text-align:center;
+			font-size: 2em;
+		}
+		h1 {
+			font-size:3em;
+		}
+		.contact-header {
+			font-weight:bold;
+		}
+		.fa {
+			font-size:2em;
+		}
+		.fa-twitter-square {
+			color: #4099FF;
+		}
+		.fa-github-square {
+			color: #000;
+		}
+		.fa-rss-square {
+			color: #FF6600;
+		}
+		.left {
+			font-size: 1em;
+		}
+		.main {
+			margin 0 auto;
+			margin-left: 10%;
+			margin-right: 10%;
+		}
+		h2 {
+			font-size: 3.5em;
+		}
+		h3 {
+			font-size:2em;
+			margin-bottom:0;
+		}
+		h4 {
+			color: #4e4e4e;
+			font-size:1.5em;
+			margin-top:0;
+		}
+		.skills {
+			margin-bottom: 10px;
+		}
+		p {
+			font-family: 'Open Sans';
+			font-size: 1.5em;
+		}
+		li {
+			font-family: 'Open Sans';
+			font-size: 1.5em;
+		}
+		.keywords {
+			background-color: #333333;
+			color:#fff;
+			padding: 6px;
+			font-size: 1.2em;
+		}
+		blockquote {
+			margin: 2em 10px;
+  			padding: 1em 10px;
+			border-left: 10px solid #edf0f5;
+			font-family: 'Open Sans';
+			font-size: 1.5em;
+		}
+		blockquote .name {
+			font-weight:bold;
+			font-family: "Montserrat";
+		}
+		@media (max-width: 1000px) {
+  			.header {
+    			font-size: 1.66em;
+  			}
+  			h2 {
+  				font-size: 3em;
+  			}
+		}
+		@media (max-width: 500px) {
+			p {
+				font-size:1.3em;
+			}
+			li {
+				font-size:1.3em;
+			}
+			blockquote {
+				font-size:1.3em;
+			}
+			h2 {
+				font-size:2.5em;
+			}
+		}
+    </style>
+	<script src= "//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
   </head>
   <body>
-	<div>Test</div>
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<div class= "header">
+		<h1>{{bio.capitalName}}</h1>
+		<div id= "contact">
+			<div class= "contact-header">
+				EMAIL
+			</div>
+			<a href= "mailto:{{bio.email.personal}}" target= "_blanks">{{bio.email.personal}}</a>
+			<div class= "contact-header">
+				<br>PHONE
+			</div>
+			{{bio.phone.personal}}
+		</div>
+		<br>
+		<div id= "profiles">
+			<a href="https://www.twitter.com/{{bio.profiles.twitter}}" target= "_blank"><i class= "fa fa-twitter-square"></i></a>
+			<a href="https://www.github.com/{{bio.profiles.github}}" target= "_blank"><i class= "fa fa-github-square"></i></a>
+			<a href="{{bio.websites.blog}}" target= "_blank"><i class= "fa fa-rss-square"></i></a>
+		</div>		
+	</div>
+	<div class= "main">
+		<div id= "about">
+			<h2><i class= "fa fa-user left"></i> ABOUT</h2>
+			<p>
+				{{bio.summary}}
+			</p>
+		</div>
+		<div id= "work">
+			<h2><i class= "fa fa-suitcase left"></i> WORK EXPERIENCE</h2>
+			{{#work}}
+				<div class= "job">
+					<h3>{{position}}, {{company}}</h3>
+					<h4>{{startDateYear}} - {{endDateYear}}</h4>
+					<p>{{summary}}</p>
+					<h4>HIGHLIGHTS</h4>
+					<ul>
+						{{#highlights}}
+						<li>{{.}}</li>
+						{{/highlights}}
+					</ul>
+				</div>
+			{{/work}}
+		</div>
+		<div id= "skills">
+			<h2><i class= "fa fa-tasks left"></i> SKILLS</h2>
+			{{#skills}}
+				<h3 class= "skills">{{name}}</h3>
+				{{#keywords}}
+				<span class= "keywords">{{.}}</span>
+				{{/keywords}}
+			{{/skills}}
+		</div><br>
+		<div id= "education">
+			<h2><i class= "fa fa-graduation-cap left"></i> EDUCATION</h2>
+			{{#education}}
+				<h3>{{institution}} - {{studyType}} Degree in {{area}}</h3>
+				<h4>{{startDateYear}} - {{endDateYear}}</h4>
+				<h4>COURSES</h4>
+				<ul>
+					{{#courses}}
+					<li>{{.}}</li>
+					{{/courses}}
+				</ul>
+			{{/education}}
+		</div>
+		<div id= "awards">
+			<h2><i class= "fa fa-trophy left"></i> AWARDS</h2>
+			{{#awards}}
+				<h3>{{title}} - {{awarder}}</h3>
+				<h4>{{day}} {{month}} {{year}}</h4>
+			{{/awards}}
+		</div>
+		<div id= "publications">
+			<h2><i class= "fa fa-book left"></i> PUBLICATIONS</h2>
+			{{#publications}}
+				<h3>{{name}}</h3>
+				<h4>{{day}} {{month}} {{year}}</h4>
+				<p><a href= "{{website}}" target= "_blank">{{website}}</a></p>
+			{{/publications}}
+		</div>
+		<div id= "references">
+			<h2><i class= "fa fa-thumbs-up left"></i> REFERENCES</h2>
+			{{#references}}
+			<blockquote>
+				{{reference}}
+				<div class= "name"><br>- {{name}}</div>
+			</blockquote><br>
+			{{/references}}
+		</div>
+	</div>
   </body>
 </html>
