@@ -128,13 +128,13 @@
 			<div class= "contact-header">
 				EMAIL
 			</div>
-			<a href= "mailto:{{bio.email.personal}}" target= "_blanks">{{bio.email.personal}}</a>
+			<a href= "mailto:{{bio.email.email}}" target= "_blanks">{{bio.email.email}}</a>
 			{{/emailBool}}
 			{{#phoneBool}}
 			<div class= "contact-header">
 				<br>PHONE
 			</div>
-			{{bio.phone.personal}}
+			{{bio.phone.phone}}
 			{{/phoneBool}}
 		</div>
 		<br>
