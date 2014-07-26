@@ -28,6 +28,8 @@
 		.header {
 			text-align:center;
 			font-size: 2em;
+			margin-left:5%;
+			margin-rightt:5%;
 		}
 		h1 {
 			font-size:3em;
@@ -38,17 +40,44 @@
 		.fa {
 			font-size:2em;
 		}
+		.fa-facebook-square {
+			color: #3b5998;
+		}
+		.fa-youtube-square {
+			color: #bb0000;
+		}
+		.fa-google-plus-square {
+			color: #d34836;
+		}
+		.fa-behance-square {
+			color: #1769ff;
+		}
+		.fa-vimeo-square {
+			color: #1ab7ea;
+		}
 		.fa-linkedin-square {
 			color: #007bb6;
 		}
 		.fa-pinterest-square {
 			color: #cb2027;
 		}
+
+		.fa-codepen {
+			font-size: 1em;
+			padding-left: 0.35em;
+		}
+		.fa-stack {
+			font-size:1em;
+			display:inline;
+		}
 		.fa-twitter-square {
 			color: #4099FF;
 		}
 		.fa-github-square {
 			color: #000;
+		}
+		.fa-flickr {
+			color: #ff0084
 		}
 		.fa-rss-square {
 			color: #FF6600;
@@ -146,10 +175,23 @@
 		</div>
 		<br>
 		<div id= "profiles">
+			{{#facebookBool}}<a href="https://www.facebook.com/{{bio.profiles.facebook}}" target= "_blank"><i class= "fa fa-facebook-square"></i></a>{{/facebookBool}}
 			{{#twitterBool}}<a href="https://www.twitter.com/{{bio.profiles.twitter}}" target= "_blank"><i class= "fa fa-twitter-square"></i></a>{{/twitterBool}}
-			{{#linkedinBool}}<a href= "https://www.linkedin.com/in/{{bio.profiles.linkedin}}" target= "_blank"><i class= "fa fa-linkedin-square"></i></a>{{/linkedinBool}}
-			{{#pinterestBool}}<a href= "https://www.pinterest.com/{{bio.profiles.pinterest}}/" target= "_blank"><i class= "fa fa-pinterest-square"></i></a>{{/pinterestBool}}
+			{{#googleplusBool}}<a href="https://plus.google.com/{{bio.profiles.googleplus}}" target= "_blank"><i class= "fa fa-google-plus-square"></i></a>{{/googleplusBool}}
+			{{#youtubeBool}}<a href="https://www.youtube.com/user/{{bio.profiles.youtube}}" target= "_blank"><i class= "fa fa-youtube-square"></i></a>{{/youtubeBool}}
+			{{#vimeoBool}}<a href="http://vimeo.com/{{bio.profiles.vimeo}}" target= "_blank"><i class= "fa fa-vimeo-square"></i></a>{{/vimeoBool}}
 			{{#githubBool}}<a href="https://www.github.com/{{bio.profiles.github}}" target= "_blank"><i class= "fa fa-github-square"></i></a>{{/githubBool}}
+			{{#linkedinBool}}<a href= "https://www.linkedin.com/in/{{bio.profiles.linkedin}}" target= "_blank"><i class= "fa fa-linkedin-square"></i></a>{{/linkedinBool}}
+			{{#pinterestBool}}<a href= "https://www.pinterest.com/{{bio.profiles.pinterest}}" target= "_blank"><i class= "fa fa-pinterest-square"></i></a>{{/pinterestBool}}
+			{{#flickrBool}}<a href= "https://www.flickr.com/photos/{{bio.profiles.flickr}}/" target= "_blank"><i class= "fa fa-flickr"></i></a>{{/flickrBool}}
+			{{#behanceBool}}<a href= "https://www.behance.net/{{bio.profiles.behance}}" target= "_blank"><i class= "fa fa-behance-square"></i></a>{{/behanceBool}}
+			{{#codepenBool}}
+			<a href= "http://codepen.io/{{bio.profiles.codepen}}" target= "_blank">
+			<span class="fa-stack">
+  				<i class="fa fa-square fa-stack-2x"></i><i class="fa fa-codepen fa-stack-1x fa-inverse"></i>
+			</span>
+			</a>
+			{{/codepenBool}}
 			{{#blogBool}}<a href="{{bio.websites.blog}}" target= "_blank"><i class= "fa fa-rss-square"></i></a>{{/blogBool}}
 		</div>		
 	</div>
@@ -158,7 +200,7 @@
 		<div id= "about">
 			<h2><i class= "fa fa-user left"></i> ABOUT</h2>
 			<p>
-				{{bio.summary}}{{bio.firstName}}
+				{{bio.summary}}
 			</p>
 		</div>
 		{{/aboutBool}}
@@ -197,7 +239,7 @@
 		<div id= "education">
 			<h2><i class= "fa fa-graduation-cap left"></i> EDUCATION</h2>
 			{{#education}}
-				<h3>{{institution}} - {{studyType}} Degree in {{area}}</h3>
+				<h3>{{institution}} - {{studyType}}, {{area}}</h3>
 				<h4>{{startDateYear}} - {{endDateYear}}</h4>
 				<h4>COURSES</h4>
 				<ul>

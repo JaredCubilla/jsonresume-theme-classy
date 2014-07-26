@@ -35,8 +35,38 @@ resumeObject.bio.capitalName = (resumeObject.bio.firstName + ' ' + resumeObject.
 	}
 
 	if (resumeObject.bio.profiles) {
+		if (resumeObject.bio.profiles.facebook) {
+			resumeObject.facebookBool = true;
+		}
+
 		if (resumeObject.bio.profiles.twitter) {
 			resumeObject.twitterBool = true;
+		}
+
+		if (resumeObject.bio.profiles.googleplus) {
+			resumeObject.googleplusBool = true;
+		}
+
+		if (resumeObject.bio.profiles.googlePlus) {
+			resumeObject.bio.profiles.googleplus = resumeObject.bio.profiles.googlePlus;
+			resumeObject.googleplusBool = true;
+		}
+
+		if (resumeObject.bio.profiles.google-plus) {
+			resumeObject.bio.profiles.googleplus = resumeObject.bio.profiles.google-plus;
+			resumeObject.googleplusBool = true;
+		}
+
+		if (resumeObject.bio.profiles.youtube) {
+			resumeObject.youtubeBool = true;
+		}
+
+		if (resumeObject.bio.profiles.behance) {
+			resumeObject.behanceBool = true;
+		}
+
+		if (resumeObject.bio.profiles.vimeo) {
+			resumeObject.vimeoBool = true;
 		}
 
 		if (resumeObject.bio.profiles.linkedin) {
@@ -47,8 +77,19 @@ resumeObject.bio.capitalName = (resumeObject.bio.firstName + ' ' + resumeObject.
 			resumeObject.pinterestBool = true;
 		}
 
+		if (resumeObject.bio.profiles.codepen) {
+			resumeObject.codepenBool = true;
+		}
+
 		if (resumeObject.bio.profiles.github) {
 			resumeObject.githubBool = true;
+		}
+		if (resumeObject.bio.profiles.flickr) {
+			resumeObject.flickrBool = true;
+		}
+		if (resumeObject.bio.profiles.flicker) {
+			resumeObject.bio.profiles.flickr = resumeObject.bio.profiles.flicker;
+			resumeObject.flickrBool = true;
 		}
 	}
 
