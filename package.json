@@ -1,6 +1,6 @@
 {
   "name": "jsonresume-theme-classy",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "An uber-classy JSONResume theme.",
   "main": "index.js",
   "scripts": {
