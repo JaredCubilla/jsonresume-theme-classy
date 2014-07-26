@@ -42,7 +42,7 @@ If you want to keep your resume mobile-friendly, please limit the number of prof
 
 Every section is optional also. If per se, you do not include the publications array in your resume.json, no publications section will appear.
 
-If you find any other problems with this theme in specifid, do feel free to leave an issue. Thanks.
+If you find any other problems with this theme in specified, do feel free to leave an issue. Thanks.
 
 ## Colophon
 
