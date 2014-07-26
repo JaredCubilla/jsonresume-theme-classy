@@ -240,13 +240,15 @@
 			<h2><i class= "fa fa-graduation-cap left"></i> EDUCATION</h2>
 			{{#education}}
 				<h3>{{institution}} - {{studyType}}, {{area}}</h3>
-				<h4>{{startDateYear}} - {{endDateYear}}</h4>
+				<h4>{{startDateMonth}}{{startDateYear}} - {{endDateMonth}}{{endDateYear}}</h4>
+				{{#educationCourses}}
 				<h4>COURSES</h4>
 				<ul>
 					{{#courses}}
 					<li>{{.}}</li>
 					{{/courses}}
 				</ul>
+				{{/educationCourses}}
 			{{/education}}
 		</div>
 		{{/educationBool}}

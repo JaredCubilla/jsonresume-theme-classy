@@ -1,6 +1,6 @@
 {
   "name": "jsonresume-theme-classy",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "An uber-classy JSONResume theme.",
   "main": "index.js",
   "scripts": {
@@ -20,7 +20,7 @@
     "url": "https://github.com/JaredCubilla/jsonresume-theme-classy.git"
   },
   "keywords": [
-    "json"
+    "json", "jsonresume", "theme"
   ],
   "bugs": {
     "url": "https://github.com/JaredCubilla/jsonresume-theme-classy/issues"

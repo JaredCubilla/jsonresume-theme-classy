@@ -52,11 +52,6 @@ resumeObject.bio.capitalName = (resumeObject.bio.firstName + ' ' + resumeObject.
 			resumeObject.googleplusBool = true;
 		}
 
-		if (resumeObject.bio.profiles.google-plus) {
-			resumeObject.bio.profiles.googleplus = resumeObject.bio.profiles.google-plus;
-			resumeObject.googleplusBool = true;
-		}
-
 		if (resumeObject.bio.profiles.youtube) {
 			resumeObject.youtubeBool = true;
 		}
@@ -113,8 +108,6 @@ resumeObject.bio.capitalName = (resumeObject.bio.firstName + ' ' + resumeObject.
 				} else { 
 					w.endDateYear = 'Present'
 				}
-			});
-			_.each(resumeObject.work, function(w){
 				if (w.highlights) {
 					if (w.highlights[0]) {
 						if (w.highlights[0] != "") {
@@ -136,13 +129,101 @@ resumeObject.bio.capitalName = (resumeObject.bio.firstName + ' ' + resumeObject.
 			      e.educationDetail = e.area + ", "+ e.studyType;
 			    }
 				e.startDateYear = e.startDate.substr(0,4);
+				if (e.startDate) {
+					switch (e.startDate.substr(5,2)) {
+						case '01':
+							e.startDateMonth = "January ";
+							break;
+						case '02':
+							e.startDateMonth = "February ";
+							break;
+						case '03':
+							e.startDateMonth = "March ";
+							break;
+						case '04':
+							e.startDateMonth = "April ";
+							break;
+						case '05':
+							e.startDateMonth = "May ";
+							break;
+						case '06':
+							e.startDateMonth = "June ";
+							break;
+						case '07':
+							e.startDateMonth = "July ";
+							break;
+						case '08':
+							e.startDateMonth = "August ";
+							break;
+						case '09':
+							e.startDateMonth = "September ";
+							break;
+						case '10': 
+							e.startDateMonth = "October ";
+							break;
+						case '11':
+							e.startDateMonth = "November ";
+							break;
+						case '12':
+							e.startDateMonth = "December ";
+							break;
+					}
+				} else {
+					e.endDateMonth = "";
+				}
 				if (e.endDate) {
 					e.endDateYear = e.endDate.substr(0,4);
+					switch (e.endDate.substr(5,2)) {
+						case '01':
+							e.endDateMonth = "January ";
+							break;
+						case '02':
+							e.endDateMonth = "February ";
+							break;
+						case '03':
+							e.endDateMonth = "March ";
+							break;
+						case '04':
+							e.endDateMonth = "April ";
+							break;
+						case '05':
+							e.endDateMonth = "May ";
+							break;
+						case '06':
+							e.endDateMonth = "June ";
+							break;
+						case '07':
+							e.endDateMonth = "July ";
+							break;
+						case '08':
+							e.endDateMonth = "August ";
+							break;
+						case '09':
+							e.endDateMonth = "September ";
+							break;
+						case '10': 
+							e.endDateMonth = "October ";
+							break;
+						case '11':
+							e.endDateMonth = "November ";
+							break;
+						case '12':
+							e.endDateMonth = "December ";
+							break;
+					}
 					if (e.endDateYear > curyear) {
 						e.endDateYear += " (expected)";
 					}
 				} else { 
 					e.endDateYear = 'Present'
+					e.endDateMonth = '';
+				}
+				if (e.courses) {
+					if (e.courses[0]) {
+						if (e.courses[0] != "") {
+							e.educationCourses = true;
+						}
+					}
 				}
 			});
 		}
