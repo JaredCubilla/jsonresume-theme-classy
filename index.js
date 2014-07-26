@@ -1,5 +1,4 @@
 var fs = require('fs');
-var gravatar = require('gravatar');
 var _ = require('lodash')
 var Mustache = require('mustache');
 var schema = require('resume-schema');
@@ -10,6 +9,8 @@ var curyear = d.getFullYear();
 var resumeObject = schema.resumeJson; 
 
 function render(resumeObject) {
+
+resumeObject.bio.capitalName = (resumeObject.bio.firstName + ' ' + resumeObject.bio.lastName).toUpperCase();
 
 	if (resumeObject.bio.email) {
 		if (resumeObject.bio.email.personal || resumeObject.bio.email.work) {
@@ -36,6 +37,14 @@ function render(resumeObject) {
 	if (resumeObject.bio.profiles) {
 		if (resumeObject.bio.profiles.twitter) {
 			resumeObject.twitterBool = true;
+		}
+
+		if (resumeObject.bio.profiles.linkedin) {
+			resumeObject.linkedinBool = true;
+		}
+
+		if (resumeObject.bio.profiles.pinterest) {
+			resumeObject.pinterestBool = true;
 		}
 
 		if (resumeObject.bio.profiles.github) {
@@ -66,8 +75,10 @@ function render(resumeObject) {
 			});
 			_.each(resumeObject.work, function(w){
 				if (w.highlights) {
-					if (w.highlights[0] != "") {
-						w.workHighlights = true;
+					if (w.highlights[0]) {
+						if (w.highlights[0] != "") {
+							w.workHighlights = true;
+						}
 					}
 				}
 			});
@@ -88,9 +99,6 @@ function render(resumeObject) {
 					e.endDateYear = e.endDate.substr(0,4);
 					if (e.endDateYear > curyear) {
 						e.endDateYear += " (expected)";
-					}
-					if (e.endDateYear == curyear) {
-						e.endDateYear = 'Present';
 					}
 				} else { 
 					e.endDateYear = 'Present'
@@ -190,9 +198,6 @@ function render(resumeObject) {
 					case '12':
 						a.month = "December";
 						break;
-					default:
-						a.month = "Month";
-						break;
 				}
 			});
 		}
@@ -209,11 +214,6 @@ function render(resumeObject) {
 			resumeObject.referencesBool = true;
 		}
 	}
-
-	
-
-	
-	resumeObject.bio.capitalName = (resumeObject.bio.firstName + ' ' + resumeObject.bio.lastName).toUpperCase();
 
 	var theme = fs.readFileSync(__dirname + '/resume.template', 'utf8');
 	var resumeHTML = Mustache.render(theme, resumeObject);

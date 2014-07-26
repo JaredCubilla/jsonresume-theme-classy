@@ -38,6 +38,12 @@
 		.fa {
 			font-size:2em;
 		}
+		.fa-linkedin-square {
+			color: #007bb6;
+		}
+		.fa-pinterest-square {
+			color: #cb2027;
+		}
 		.fa-twitter-square {
 			color: #4099FF;
 		}
@@ -54,6 +60,7 @@
 			margin 0 auto;
 			margin-left: 10%;
 			margin-right: 10%;
+			margin-bottom: 50px;
 		}
 		h2 {
 			font-size: 3.5em;
@@ -139,8 +146,9 @@
 		</div>
 		<br>
 		<div id= "profiles">
-			{{#twitterBool}}
-			<a href="https://www.twitter.com/{{bio.profiles.twitter}}" target= "_blank"><i class= "fa fa-twitter-square"></i></a>{{/twitterBool}}
+			{{#twitterBool}}<a href="https://www.twitter.com/{{bio.profiles.twitter}}" target= "_blank"><i class= "fa fa-twitter-square"></i></a>{{/twitterBool}}
+			{{#linkedinBool}}<a href= "https://www.linkedin.com/in/{{bio.profiles.linkedin}}" target= "_blank"><i class= "fa fa-linkedin-square"></i></a>{{/linkedinBool}}
+			{{#pinterestBool}}<a href= "https://www.pinterest.com/{{bio.profiles.pinterest}}/" target= "_blank"><i class= "fa fa-pinterest-square"></i></a>{{/pinterestBool}}
 			{{#githubBool}}<a href="https://www.github.com/{{bio.profiles.github}}" target= "_blank"><i class= "fa fa-github-square"></i></a>{{/githubBool}}
 			{{#blogBool}}<a href="{{bio.websites.blog}}" target= "_blank"><i class= "fa fa-rss-square"></i></a>{{/blogBool}}
 		</div>		
@@ -150,7 +158,7 @@
 		<div id= "about">
 			<h2><i class= "fa fa-user left"></i> ABOUT</h2>
 			<p>
-				{{bio.summary}}
+				{{bio.summary}}{{bio.firstName}}
 			</p>
 		</div>
 		{{/aboutBool}}
