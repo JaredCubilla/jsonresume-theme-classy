@@ -210,7 +210,7 @@
 			{{#work}}
 				<div class= "job">
 					<h3>{{position}}, {{company}}</h3>
-					<h4>{{startDateYear}} - {{endDateYear}}</h4>
+					<h4>{{startDateMonth}}{{startDateYear}} - {{endDateMonth}}{{endDateYear}}</h4>
 					<p>{{summary}}</p>
 					{{#workHighlights}}
 					<h4>HIGHLIGHTS</h4>

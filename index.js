@@ -102,9 +102,87 @@ resumeObject.bio.capitalName = (resumeObject.bio.firstName + ' ' + resumeObject.
 		if (resumeObject.work[0].company) {
 			resumeObject.workBool = true;
 			_.each(resumeObject.work, function(w){
-				w.startDateYear = (w.startDate || "").substr(0,4);
+				if (w.startDate) {
+					w.startDateYear = (w.startDate || "").substr(0,4);
+					switch (w.startDate.substr(5,2)) {
+						case '01':
+							w.startDateMonth = "January ";
+							break;
+						case '02':
+							w.startDateMonth = "February ";
+							break;
+						case '03':
+							w.startDateMonth = "March ";
+							break;
+						case '04':
+							w.startDateMonth = "April ";
+							break;
+						case '05':
+							w.startDateMonth = "May ";
+							break;
+						case '06':
+							w.startDateMonth = "June ";
+							break;
+						case '07':
+							w.startDateMonth = "July ";
+							break;
+						case '08':
+							w.startDateMonth = "August ";
+							break;
+						case '09':
+							w.startDateMonth = "September ";
+							break;
+						case '10': 
+							w.startDateMonth = "October ";
+							break;
+						case '11':
+							w.startDateMonth = "November ";
+							break;
+						case '12':
+							w.startDateMonth = "December ";
+							break;
+						}
+				}
 				if(w.endDate) {
 					w.endDateYear = (w.endDate || "").substr(0,4);
+					switch ((w.endDate || "").substr(5,2)) {
+						case '01':
+							w.endDateMonth = "January ";
+							break;
+						case '02':
+							w.endDateMonth = "February ";
+							break;
+						case '03':
+							w.endDateMonth = "March ";
+							break;
+						case '04':
+							w.endDateMonth = "April ";
+							break;
+						case '05':
+							w.endDateMonth = "May ";
+							break;
+						case '06':
+							w.endDateMonth = "June ";
+							break;
+						case '07':
+							w.endDateMonth = "July ";
+							break;
+						case '08':
+							w.endDateMonth = "August ";
+							break;
+						case '09':
+							w.endDateMonth = "September ";
+							break;
+						case '10': 
+							w.endDateMonth = "October ";
+							break;
+						case '11':
+							w.endDateMonth = "November ";
+							break;
+						case '12':
+							w.endDateMonth = "December ";
+							break;
+						}
 				} else { 
 					w.endDateYear = 'Present'
 				}
@@ -128,8 +206,8 @@ resumeObject.bio.capitalName = (resumeObject.bio.firstName + ' ' + resumeObject.
 			    } else {
 			      e.educationDetail = e.area + ", "+ e.studyType;
 			    }
-				e.startDateYear = e.startDate.substr(0,4);
 				if (e.startDate) {
+					e.startDateYear = e.startDate.substr(0,4);
 					switch (e.startDate.substr(5,2)) {
 						case '01':
 							e.startDateMonth = "January ";
