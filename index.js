@@ -1,5 +1,5 @@
 var fs = require('fs');
-var _ = require('lodash')
+var _ = require('lodash');
 var Mustache = require('mustache');
 var schema = require('resume-schema');
 
@@ -10,92 +10,39 @@ var resumeObject = schema.resumeJson;
 
 function render(resumeObject) {
 
-resumeObject.bio.capitalName = (resumeObject.bio.firstName + ' ' + resumeObject.bio.lastName).toUpperCase();
+resumeObject.basics.capitalName = (resumeObject.basics.name).toUpperCase();
+resumeObject.basics.capitalLabel = (resumeObject.basics.label).toUpperCase();
 
-	if (resumeObject.bio.email) {
-		if (resumeObject.bio.email.personal || resumeObject.bio.email.work) {
-			resumeObject.emailBool = true;
-			if (resumeObject.bio.email.personal) {
-				resumeObject.bio.email.email = resumeObject.bio.email.personal;
-			} else if (resumeObject.bio.email.work) {
-				resumeObject.bio.email.email = resumeObject.bio.email.work;
-			}
-		}
+	if (resumeObject.basics.email) {
+		resumeObject.emailBool = true;
 	}
 
-	if (resumeObject.bio.phone) {
-		if (resumeObject.bio.phone.personal || resumeObject.bio.phone.work) {
-			resumeObject.phoneBool = true;
-			if (resumeObject.bio.phone.personal) {
-				resumeObject.bio.phone.phone = resumeObject.bio.phone.personal;
-			} else if (resumeObject.bio.phone.work) {
-				resumeObject.bio.phone.phone = resumeObject.bio.phone.work;
-			}
-		}
+	if (resumeObject.basics.phone) {
+		resumeObject.phoneBool = true;
 	}
 
-	if (resumeObject.bio.profiles) {
-		if (resumeObject.bio.profiles.facebook) {
-			resumeObject.facebookBool = true;
-		}
-
-		if (resumeObject.bio.profiles.twitter) {
-			resumeObject.twitterBool = true;
-		}
-
-		if (resumeObject.bio.profiles.googleplus) {
-			resumeObject.googleplusBool = true;
-		}
-
-		if (resumeObject.bio.profiles.googlePlus) {
-			resumeObject.bio.profiles.googleplus = resumeObject.bio.profiles.googlePlus;
-			resumeObject.googleplusBool = true;
-		}
-
-		if (resumeObject.bio.profiles.youtube) {
-			resumeObject.youtubeBool = true;
-		}
-
-		if (resumeObject.bio.profiles.behance) {
-			resumeObject.behanceBool = true;
-		}
-
-		if (resumeObject.bio.profiles.vimeo) {
-			resumeObject.vimeoBool = true;
-		}
-
-		if (resumeObject.bio.profiles.linkedin) {
-			resumeObject.linkedinBool = true;
-		}
-
-		if (resumeObject.bio.profiles.pinterest) {
-			resumeObject.pinterestBool = true;
-		}
-
-		if (resumeObject.bio.profiles.codepen) {
-			resumeObject.codepenBool = true;
-		}
-
-		if (resumeObject.bio.profiles.github) {
-			resumeObject.githubBool = true;
-		}
-		if (resumeObject.bio.profiles.flickr) {
-			resumeObject.flickrBool = true;
-		}
-		if (resumeObject.bio.profiles.flicker) {
-			resumeObject.bio.profiles.flickr = resumeObject.bio.profiles.flicker;
-			resumeObject.flickrBool = true;
-		}
+	if (resumeObject.basics.website) {
+		resumeObject.websiteBool = true;
 	}
 
-	if (resumeObject.bio.websites) {
-		if (resumeObject.bio.websites.blog) {
-			resumeObject.blogBool = true;
-		}
-	}
-
-	if (resumeObject.bio.summary) {
+	if (resumeObject.basics.summary) {
 		resumeObject.aboutBool = true;
+	}
+
+	if (resumeObject.basics.profiles) {
+		if (resumeObject.basics.profiles[0].network) {
+			_.each(resumeObject.basics.profiles, function(w){
+				if ((w.network == 'Twitter' || w.network == 'twitter') && w.url == '' && w.username != '') {
+					w.url = "https://twitter.com/" + w.username;
+				}
+				if ((w.network == 'facebook' || w.network == 'Facebook' || w.network == 'FaceBook') && w.url == '' && w.username != '') {
+					w.url = "https://facebook.com/" + w.username;
+				}
+				if ((w.network == 'Linkedin' || w.network == 'linkedin' || w.network == 'LinkedIn') && w.url == '' && w.username != '') {
+					w.url = "https://linkedin.com/in/" + w.username;
+				}
+			});
+		}
 	}
 
 	if (resumeObject.work) {
@@ -406,6 +353,18 @@ resumeObject.bio.capitalName = (resumeObject.bio.firstName + ' ' + resumeObject.
 	if (resumeObject.skills) {
 		if (resumeObject.skills[0].name) {
 			resumeObject.skillsBool = true;
+		}
+	}
+
+	if (resumeObject.interests) {
+		if (resumeObject.interests[0].name) {
+			resumeObject.interestsBool = true;
+		}
+	}
+
+	if (resumeObject.languages) {
+		if (resumeObject.languages[0].language) {
+			resumeObject.languagesBool = true;
 		}
 	}
 

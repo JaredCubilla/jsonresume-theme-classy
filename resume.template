@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{bio.firstName}} {{bio.lastName}}</title>
+    <title>{{basics.name}}</title>
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans' rel='stylesheet' type='text/css'>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
 		body {
 			font-size: 62.5%;
-			font-family: "Montserrat";
+			font-family: Montserrat;
 			color: #333333;
 		}
 		a {
@@ -33,54 +33,23 @@
 		}
 		h1 {
 			font-size:3em;
+			margin-bottom:0;
 		}
+		.profile {
+			font-family: Montserrat;
+			font-size: 1em;
+			margin:0;
+		}
+
 		.contact-header {
 			font-weight:bold;
 		}
+		.label {
+			margin-top: 0;
+			margin-bottom: 1em;
+		}
 		.fa {
 			font-size:2em;
-		}
-		.fa-facebook-square {
-			color: #3b5998;
-		}
-		.fa-youtube-square {
-			color: #bb0000;
-		}
-		.fa-google-plus-square {
-			color: #d34836;
-		}
-		.fa-behance-square {
-			color: #1769ff;
-		}
-		.fa-vimeo-square {
-			color: #1ab7ea;
-		}
-		.fa-linkedin-square {
-			color: #007bb6;
-		}
-		.fa-pinterest-square {
-			color: #cb2027;
-		}
-
-		.fa-codepen {
-			font-size: 1em;
-			padding-left: 0.35em;
-		}
-		.fa-stack {
-			font-size:1em;
-			display:inline;
-		}
-		.fa-twitter-square {
-			color: #4099FF;
-		}
-		.fa-github-square {
-			color: #000;
-		}
-		.fa-flickr {
-			color: #ff0084
-		}
-		.fa-rss-square {
-			color: #FF6600;
 		}
 		.left {
 			font-size: 1em;
@@ -158,41 +127,31 @@
   </head>
   <body>
 	<div class= "header">
-		<h1>{{bio.capitalName}}</h1>
+		<h1>{{basics.capitalName}}</h1>
+		<h3 class= "label">{{basics.capitalLabel}}</h3>
 		<div id= "contact">
 			{{#emailBool}}
 			<div class= "contact-header">
-				EMAIL
+				EMAIL &bull; <a href= "mailto:{{basics.email}}" target= "_blank">{{basics.email}}</a>
 			</div>
-			<a href= "mailto:{{bio.email.email}}" target= "_blanks">{{bio.email.email}}</a>
 			{{/emailBool}}
 			{{#phoneBool}}
 			<div class= "contact-header">
-				<br>PHONE
+				PHONE &bull; {{basics.phone}}
 			</div>
-			{{bio.phone.phone}}
 			{{/phoneBool}}
+			{{#websiteBool}}
+			<div class= "contact-header">
+				WEBSITE &bull; <a href= "{{basics.website}}" target= "_blank">{{basics.website}}</a>
+			</div>
+			{{/websiteBool}}
 		</div>
 		<br>
 		<div id= "profiles">
-			{{#facebookBool}}<a href="https://www.facebook.com/{{bio.profiles.facebook}}" target= "_blank"><i class= "fa fa-facebook-square"></i></a>{{/facebookBool}}
-			{{#twitterBool}}<a href="https://www.twitter.com/{{bio.profiles.twitter}}" target= "_blank"><i class= "fa fa-twitter-square"></i></a>{{/twitterBool}}
-			{{#googleplusBool}}<a href="https://plus.google.com/{{bio.profiles.googleplus}}" target= "_blank"><i class= "fa fa-google-plus-square"></i></a>{{/googleplusBool}}
-			{{#youtubeBool}}<a href="https://www.youtube.com/user/{{bio.profiles.youtube}}" target= "_blank"><i class= "fa fa-youtube-square"></i></a>{{/youtubeBool}}
-			{{#vimeoBool}}<a href="http://vimeo.com/{{bio.profiles.vimeo}}" target= "_blank"><i class= "fa fa-vimeo-square"></i></a>{{/vimeoBool}}
-			{{#githubBool}}<a href="https://www.github.com/{{bio.profiles.github}}" target= "_blank"><i class= "fa fa-github-square"></i></a>{{/githubBool}}
-			{{#linkedinBool}}<a href= "https://www.linkedin.com/in/{{bio.profiles.linkedin}}" target= "_blank"><i class= "fa fa-linkedin-square"></i></a>{{/linkedinBool}}
-			{{#pinterestBool}}<a href= "https://www.pinterest.com/{{bio.profiles.pinterest}}" target= "_blank"><i class= "fa fa-pinterest-square"></i></a>{{/pinterestBool}}
-			{{#flickrBool}}<a href= "https://www.flickr.com/photos/{{bio.profiles.flickr}}/" target= "_blank"><i class= "fa fa-flickr"></i></a>{{/flickrBool}}
-			{{#behanceBool}}<a href= "https://www.behance.net/{{bio.profiles.behance}}" target= "_blank"><i class= "fa fa-behance-square"></i></a>{{/behanceBool}}
-			{{#codepenBool}}
-			<a href= "http://codepen.io/{{bio.profiles.codepen}}" target= "_blank">
-			<span class="fa-stack">
-  				<i class="fa fa-square fa-stack-2x"></i><i class="fa fa-codepen fa-stack-1x fa-inverse"></i>
-			</span>
-			</a>
-			{{/codepenBool}}
-			{{#blogBool}}<a href="{{bio.websites.blog}}" target= "_blank"><i class= "fa fa-rss-square"></i></a>{{/blogBool}}
+			<div class= "contact-header">PROFILES</div><br>
+			{{#basics.profiles}}
+			<p class= "profile"><a href= "{{url}}" target= "_blank" class= "profile">{{network}}</a></p>
+			{{/basics.profiles}}
 		</div>		
 	</div>
 	<div class= "main">
@@ -200,7 +159,7 @@
 		<div id= "about">
 			<h2><i class= "fa fa-user left"></i> ABOUT</h2>
 			<p>
-				{{bio.summary}}
+				{{basics.summary}}
 			</p>
 		</div>
 		{{/aboutBool}}
@@ -258,6 +217,7 @@
 			{{#awards}}
 				<h3>{{title}} - {{awarder}}</h3>
 				<h4>{{day}} {{month}} {{year}}</h4>
+				<p>{{summary}}</p>
 			{{/awards}}
 		</div>
 		{{/awardsBool}}
@@ -267,10 +227,31 @@
 			{{#publications}}
 				<h3>{{name}}</h3>
 				<h4>{{day}} {{month}} {{year}}</h4>
-				<p><a href= "{{website}}" target= "_blank">{{website}}</a></p>
+				<p>{{summary}}</p>
+				<h4>WEBSITE<br><a href= "{{website}}" target= "_blank">{{website}}</a></h4>
 			{{/publications}}
 		</div>
 		{{/publicationsBool}}
+		{{#interestsBool}}
+		<div id= "interests">
+			<h2><i></i> INTERESTS</h2>
+			{{#interests}}
+				<h3 class= "skills">{{name}}</h3>
+				{{#keywords}}
+				<span class= "keywords">{{.}}</span>
+				{{/keywords}}
+			{{/interests}}
+		</div>
+		{{/interestsBool}}
+		{{#languagesBool}}
+		<div id= "languages">
+			<h2><i class= "fa fa-language left"></i> LANGUAGES</h2>
+			{{#languages}}
+				<h3>{{language}}</h3>
+				<h4>Fluency: {{fluency}}</h4>
+			{{/languages}}
+		</div>
+		{{/languagesBool}}
 		{{#referencesBool}}
 		<div id= "references">
 			<h2><i class= "fa fa-thumbs-up left"></i> REFERENCES</h2>
