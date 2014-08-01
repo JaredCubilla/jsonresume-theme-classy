@@ -234,7 +234,7 @@
 		{{/publicationsBool}}
 		{{#interestsBool}}
 		<div id= "interests">
-			<h2><i></i> INTERESTS</h2>
+			<h2><i class= "fa fa-star left"></i> INTERESTS</h2>
 			{{#interests}}
 				<h3 class= "skills">{{name}}</h3>
 				{{#keywords}}
