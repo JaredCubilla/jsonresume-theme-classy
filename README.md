@@ -22,27 +22,11 @@ More details about the CLI and it's commands are available [here](https://github
 
 ## Tips
 
-As of now, the "Classy" theme supports the following profiles in the bio.profiles array:
-
-* Facebook
-* Twitter
-* Google Plus
-* Linkedin
-* YouTube
-* Behance
-* CodePen
-* Vimeo
-* Flickr
-* Github
-* Pinterest
-
-Every single one of these is optional, and every field in the bio.profiles array **must** be entered lowercase, without spaces. If you want support for more social networks, feel free to leave an issue. Thanks.
-
-If you want to keep your resume mobile-friendly, please limit the number of profiles to 10, please. No one should have over 10 profiles on their resume anyway.
-
-Every section is optional also. If per se, you do not include the publications array in your resume.json, no publications section will appear.
+If you do not include the publications array in your resume.json, no publications section will appear. The same goes for skills, languages, references, work, education, your summary... the list goes on and on. **Every section is optional, and if you do not fill a section with any information, it will be left blank.**
 
 If you find any other problems with this theme in specified, do feel free to leave an issue. Thanks.
+
+
 
 ## Colophon
 
