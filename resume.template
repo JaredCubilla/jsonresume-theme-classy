@@ -183,6 +183,24 @@
 			{{/work}}
 		</div>
 		{{/workBool}}
+		{{#volunteerBool}}
+		<div id= "volunteer">
+			<h2><i class= "fa fa-child left"></i> VOLUNTEER WORK</h2>
+			{{#volunteer}}
+			<h3>{{position}}, {{organization}}</h3>
+			<h4>{{startDateMonth}}{{startDateYear}} - {{endDateMonth}}{{endDateYear}}</h4>
+			<p>{{summary}}<br><a href= "{{website}}" target= "_blank">{{website}}</a></p>
+			{{#volunterHighlights}}
+			<h4>HIGHLIGHTS</h4>
+			<ul>
+				{{#highlights}}
+				<li>{{.}}</li>
+				{{/highlights}}
+			</ul>
+			{{/volunterHighlights}}
+			{{/volunteer}}
+		</div>
+		{{/volunteerBool}}
 		{{#skillsBool}}
 		<div id= "skills">
 			<h2><i class= "fa fa-tasks left"></i> SKILLS</h2>
@@ -198,9 +216,9 @@
 		<div id= "education">
 			<h2><i class= "fa fa-graduation-cap left"></i> EDUCATION</h2>
 			{{#education}}
-				<h3>{{institution}} - {{studyType}}, {{area}}</h3>
-				<h4>{{startDateMonth}}{{startDateYear}} - {{endDateMonth}}{{endDateYear}}<br>
-				GPA: {{gpa}}</h4>
+				<h3>{{studyType}}, {{area}} - {{institution}}</h3>
+				<h4>{{startDateMonth}}{{startDateYear}} - {{endDateMonth}}{{endDateYear}}{{#gpaBool}}<br>
+				GPA: {{gpa}}{{/gpaBool}}</h4>
 				{{#educationCourses}}
 				<h4>COURSES</h4>
 				<ul>
@@ -228,8 +246,7 @@
 			{{#publications}}
 				<h3>{{name}}</h3>
 				<h4>{{day}} {{month}} {{year}}</h4>
-				<p>{{summary}}</p>
-				<h4><a href= "{{website}}" target= "_blank">{{website}}</a></h4>
+				<p>{{summary}}<br><a href= "{{website}}" target= "_blank">{{website}}</a></p>
 			{{/publications}}
 		</div>
 		{{/publicationsBool}}

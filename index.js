@@ -153,6 +153,9 @@ resumeObject.basics.capitalLabel = (resumeObject.basics.label).toUpperCase();
 			    } else {
 			      e.educationDetail = e.area + ", "+ e.studyType;
 			    }
+			    if (e.gpa) {
+			    	e.gpaBool = true;
+			    }
 				if (e.startDate) {
 					e.startDateYear = e.startDate.substr(0,4);
 					switch (e.startDate.substr(5,2)) {
@@ -345,6 +348,99 @@ resumeObject.basics.capitalLabel = (resumeObject.basics.label).toUpperCase();
 					case '12':
 						a.month = "December";
 						break;
+				}
+			});
+		}
+	}
+
+	if (resumeObject.volunteer) {
+		if (resumeObject.volunteer[0].position) {
+			resumeObject.volunteerBool = true;
+			_.each(resumeObject.volunteer, function(a){
+				a.startDateYear = (a.startDate || "").substr(0,4);
+				switch ((a.startDate || "").substr(5,2)) {
+					case '01':
+						a.startDateMonth = "January ";
+						break;
+					case '02':
+						a.startDateMonth = "February ";
+						break;
+					case '03':
+						a.startDateMonth = "March ";
+						break;
+					case '04':
+						a.startDateMonth = "April ";
+						break;
+					case '05':
+						a.startDateMonth = "May ";
+						break;
+					case '06':
+						a.startDateMonth = "June ";
+						break;
+					case '07':
+						a.startDateMonth = "July ";
+						break;
+					case '08':
+						a.startDateMonth = "August ";
+						break;
+					case '09':
+						a.startDateMonth = "September ";
+						break;
+					case '10': 
+						a.startDateMonth = "October ";
+						break;
+					case '11':
+						a.startDateMonth = "November ";
+						break;
+					case '12':
+						a.startDateMonth = "December ";
+						break;
+				}
+				a.endDateYear = (a.endDate || "").substr(0,4);
+				switch ((a.endDate || "").substr(5,2)) {
+					case '01':
+						a.endDateMonth = "January ";
+						break;
+					case '02':
+						a.endDateMonth = "February ";
+						break;
+					case '03':
+						a.endDateMonth = "March ";
+						break;
+					case '04':
+						a.endDateMonth = "April ";
+						break;
+					case '05':
+						a.endDateMonth = "May ";
+						break;
+					case '06':
+						a.endDateMonth = "June ";
+						break;
+					case '07':
+						a.endDateMonth = "July ";
+						break;
+					case '08':
+						a.endDateMonth = "August ";
+						break;
+					case '09':
+						a.endDateMonth = "September ";
+						break;
+					case '10': 
+						a.endDateMonth = "October ";
+						break;
+					case '11':
+						a.endDateMonth = "November ";
+						break;
+					case '12':
+						a.endDateMonth = "December ";
+						break;
+				}
+				if (a.highlights) {
+					if (a.highlights[0]) {
+						if (a.highlights[0] != "") {
+							a.volunterHighlights = true;
+						}
+					}
 				}
 			});
 		}
