@@ -13,6 +13,10 @@
 			font-family: Montserrat;
 			color: #333333;
 		}
+		.picture {
+			border-radius: 50%;
+			margin: 0 auto;
+		}
 		a {
 			color: #333333;
 			text-decoration: none;
@@ -28,8 +32,9 @@
 		.header {
 			text-align:center;
 			font-size: 2em;
+			margin-top:1em;
 			margin-left:5%;
-			margin-rightt:5%;
+			margin-right:5%;
 		}
 		h1 {
 			font-size:3em;
@@ -138,6 +143,9 @@
   </head>
   <body>
 	<div class= "header">
+		{{#pictureBool}}
+			<img src= "{{basics.picture}}" width= "75px" height= "75px" class= "picture">
+		{{/pictureBool}}
 		<h1>{{basics.capitalName}}</h1>
 		<h3 class= "label">{{basics.capitalLabel}}</h3>
 		<div class= "contact-header">

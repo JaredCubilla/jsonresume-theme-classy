@@ -21,6 +21,10 @@ resumeObject.basics.capitalLabel = (resumeObject.basics.label).toUpperCase();
 		resumeObject.phoneBool = true;
 	}
 
+	if (resumeObject.basics.picture) {
+		resumeObject.pictureBool = true;
+	}
+
 	if (resumeObject.basics.website) {
 		resumeObject.websiteBool = true;
 	}
