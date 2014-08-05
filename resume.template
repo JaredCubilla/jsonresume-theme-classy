@@ -100,6 +100,9 @@
 			font-weight:bold;
 			font-family: "Montserrat";
 		}
+		.responsive-show {
+			display:none;
+		}
 		@media (max-width: 1000px) {
   			.header {
     			font-size: 1.66em;
@@ -121,6 +124,14 @@
 			h2 {
 				font-size:2.3em;
 			}
+			.responsive-hidden {
+				display:none;
+				visibility: hidden;
+			}
+			.responsive-show {
+				display:inline;
+				visibility: visible;
+			}
 		}
     </style>
 	<script src= "//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -137,17 +148,17 @@
 			<br>
 			{{#emailBool}}
 			<div class= "contact-header">
-				EMAIL &bull; <a href= "mailto:{{basics.email}}" target= "_blank">{{basics.email}}</a>
+				EMAIL <span class= "responsive-hidden">&bull;</span> <span class= "responsive-show"><br></span><a href= "mailto:{{basics.email}}" target= "_blank">{{basics.email}}</a> <span class= "responsive-show"><br><br></span>
 			</div>
 			{{/emailBool}}
 			{{#phoneBool}}
 			<div class= "contact-header">
-				PHONE &bull; {{basics.phone}}
+				PHONE <span class= "responsive-hidden">&bull;</span> <span class= "responsive-show"><br></span>{{basics.phone}} <span class= "responsive-show"><br><br></span>
 			</div>
 			{{/phoneBool}}
 			{{#websiteBool}}
 			<div class= "contact-header">
-				WEBSITE &bull; <a href= "{{basics.website}}" target= "_blank">{{basics.website}}</a>
+				WEBSITE <span class= "responsive-hidden">&bull;</span> <span class= "responsive-show"><br></span><a href= "{{basics.website}}" target= "_blank">{{basics.website}}</a> <span class= "responsive-show"><br><br></span>
 			</div>
 			{{/websiteBool}}
 		</div>
