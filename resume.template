@@ -199,7 +199,8 @@
 			<h2><i class= "fa fa-graduation-cap left"></i> EDUCATION</h2>
 			{{#education}}
 				<h3>{{institution}} - {{studyType}}, {{area}}</h3>
-				<h4>{{startDateMonth}}{{startDateYear}} - {{endDateMonth}}{{endDateYear}}</h4>
+				<h4>{{startDateMonth}}{{startDateYear}} - {{endDateMonth}}{{endDateYear}}<br>
+				GPA: {{gpa}}</h4>
 				{{#educationCourses}}
 				<h4>COURSES</h4>
 				<ul>
@@ -228,7 +229,7 @@
 				<h3>{{name}}</h3>
 				<h4>{{day}} {{month}} {{year}}</h4>
 				<p>{{summary}}</p>
-				<h4>WEBSITE<br><a href= "{{website}}" target= "_blank">{{website}}</a></h4>
+				<h4><a href= "{{website}}" target= "_blank">{{website}}</a></h4>
 			{{/publications}}
 		</div>
 		{{/publicationsBool}}
