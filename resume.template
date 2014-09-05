@@ -94,6 +94,7 @@
 			padding: 6px;
 			font-size: 1.2em;
 			margin-bottom: 5px;
+			display:inline-block;
 		}
 		blockquote {
 			margin: 2em 10px;
