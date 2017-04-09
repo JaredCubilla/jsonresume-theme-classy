@@ -1,0 +1,17 @@
+{{#if resume.education.length}}
+<section id="education">
+	<h2><i class="fa fa-graduation-cap left"></i> EDUCATION</h2>
+	{{#each resume.education}}
+	<h3>{{studyType}}, {{area}} - {{institution}}</h3>
+	<h4>{{startDate}} {{#if endDate}} - {{endDate}} {{else}} - Present {{/if}} {{#if gpa}}<br> GPA: {{gpa}} {{/if}}
+	</h4>
+	{{#if courses.length}}
+	<h4>COURSES</h4>
+	<ul class="courses">
+		{{#each courses}}
+		<li>{{.}}</li>
+		{{/each}}
+	</ul>
+	{{/if}} {{/each}}
+</section>
+{{/if}}

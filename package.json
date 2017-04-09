@@ -1,16 +1,17 @@
 {
   "name": "jsonresume-theme-classy",
-  "version": "1.0.8",
-  "description": "An uber-classy JSONResume theme.",
+  "version": "1.1.0",
+  "description": "An uber-classy JSONResume theme, that is print friendly too",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Jared Cubilla",
+  "author": "Reuben",
   "license": "MIT",
   "dependencies": {
+    "dateformat": "^2.0.0",
+    "handlebars": "^4.0.6",
     "lodash": "^2.4.1",
-    "mustache": "^0.8.2",
     "resume-schema": "0.0.16",
     "tarball-extract": "0.0.3"
   },

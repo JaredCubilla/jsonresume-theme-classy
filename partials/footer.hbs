@@ -1,0 +1,22 @@
+{{#resume.basics}}
+<footer>
+	<p>
+		{{name}} 
+        {{#if phone}}
+            |  M <a href= "tel:{{phone}}" target= "_blank">{{phone}}</a>
+        {{/if }}         
+        {{#if email}}
+            |  M <a href= "mailto:{{email}}" target= "_blank">{{email}}</a>
+        {{/if }}
+         
+        {{#if phone}}
+            |  M <a href= "tel:{{phone}}" target= "_blank">{{phone}}</a>
+        {{/if }}
+        {{#profiles}}
+			
+         |  <a href= "{{url}}" target= "_blank" class= "profile">{{url}}</a>
+        {{/profiles}}
+	</p>
+</footer>
+{{/resume.basics}}
+

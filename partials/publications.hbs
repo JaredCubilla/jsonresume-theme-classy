@@ -1,0 +1,11 @@
+{{#if resume.publications.length}}
+<section id="publications">
+	<h2><i class="fa fa-book left"></i> PUBLICATIONS</h2>
+	{{#each resume.publications}}
+	<h3>{{name}}</h3>
+	<h4>{{releaseDate}}</h4>
+	<p>{{summary}}<br><a href="{{website}}" target="_blank">{{website}}</a></p>
+
+	{{/each}}
+</section>
+{{/if}}

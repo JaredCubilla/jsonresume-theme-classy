@@ -1,0 +1,219 @@
+body {
+    font-size: 62.5%;
+    font-family: Montserrat;
+    color: #333333;
+}
+
+.picture {
+    border-radius: 50%;
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+}
+
+a {
+    color: #333333;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #4e4e4e;
+}
+
+a:hover {
+    color: #4e4e4e;
+    text-decoration: underline;
+}
+
+header {
+    text-align: center;
+    font-size: 2em;
+    margin-top: 1em;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 0;
+}
+
+.profile {
+    font-family: Montserrat;
+    font-size: 1em;
+    margin: 0;
+}
+
+.contact-header {
+    font-weight: bold;
+}
+
+.label {
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+.fa {
+    font-size: 2em;
+}
+
+.left {
+    font-size: 1em;
+}
+
+.main {
+    margin: 0 auto;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 50px;
+}
+
+h2 {
+    font-size: 3.5em;
+}
+
+h3 {
+    font-size: 2em;
+    margin-bottom: 0;
+}
+
+h4 {
+    color: #4e4e4e;
+    font-size: 1.5em;
+    margin-top: 0;
+}
+
+.skills {
+    margin-bottom: 10px;
+}
+
+p {
+    font-family: 'Open Sans';
+    font-size: 1.5em;
+}
+
+li {
+    font-family: 'Open Sans';
+    font-size: 1.5em;
+}
+
+.keywords {
+    background-color: #333333;
+    color: #fff;
+    padding: 6px;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+blockquote {
+    margin: 2em 10px;
+    padding: 1em 10px;
+    border-left: 10px solid #edf0f5;
+    font-family: 'Open Sans';
+    font-size: 1.5em;
+}
+
+blockquote .name {
+    font-weight: bold;
+    font-family: "Montserrat";
+}
+
+.responsive-show {
+    display: none;
+}
+
+footer {
+    display: none;
+}
+
+.address {
+    display: block
+}
+
+section.skills {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+@media screen and (max-width: 1000px) {
+    header {
+        font-size: 1.66em;
+    }
+    h2 {
+        font-size: 3em;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    p {
+        font-size: 1.2em;
+    }
+    li {
+        font-size: 1.2em;
+    }
+    blockquote {
+        font-size: 1.2em;
+    }
+    h2 {
+        font-size: 2.3em;
+    }
+    .responsive-hidden {
+        display: none;
+        visibility: hidden;
+    }
+    .responsive-show {
+        display: inline;
+        visibility: visible;
+    }
+}
+
+@media print and (max-width: 483.8pt) {
+    .picture {
+        width: 100px;
+        height: 100px;
+    }
+    header {
+        font-size: 1em;
+    }
+    h2 {
+        font-size: 1.75em;
+    }
+    h3 {
+        font-size: 1.5em;
+    }
+    h3.label {
+        display: none;
+    }
+    footer {
+        display: block;
+        position: fixed;
+        bottom:0
+    }
+    footer p {
+        font-size: 0.75em;
+    }
+    .address {
+        display: inline-block
+    }
+    .profile {
+        font-size: 1.1em;
+        display: inline-block
+    }
+    #profiles .contact-header {
+        display: none;
+    }
+    #languages,
+    #interests {
+        display: none;
+    }
+    section.skills {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    section.skills section {
+        margin-right: 10em
+    }
+}
