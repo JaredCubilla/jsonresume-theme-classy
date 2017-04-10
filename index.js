@@ -6,12 +6,6 @@ var schema = require('resume-schema');
 var dateFormat = require('dateformat');
 
 var resumeObject = schema.resumeJson;
-const monthNames = ["January", "February", "March", "April", "May", "June",
-	"July", "August", "September", "October", "November", "December"
-];
-const monthShortNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-	"Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-];
 
 function render(resumeObject) {
 
@@ -23,17 +17,17 @@ function render(resumeObject) {
 	if (resumeObject.basics.profiles) {
 		if (resumeObject.basics.profiles[0].network) {
 			_.each(resumeObject.basics.profiles, function (w) {
-
-				if ((w.network.toLowerCase() == 'twitter') && w.url == '' && w.username != '') {
+				w.network = w.network.toLowerCase();
+				if ((w.network == 'twitter') && w.url == '' && w.username != '') {
 					w.url = "https://twitter.com/" + w.username;
 				}
-				if ((w.network.toLowerCase() == 'facebook') && w.url == '' && w.username != '') {
+				if ((w.network == 'facebook') && w.url == '' && w.username != '') {
 					w.url = "https://facebook.com/" + w.username;
 				}
-				if ((w.network.toLowerCase() == 'linkedin') && w.url == '' && w.username != '') {
+				if ((w.network == 'linkedin') && w.url == '' && w.username != '') {
 					w.url = "https://linkedin.com/in/" + w.username;
 				}
-				if ((w.network.toLowerCase() == 'github') && w.url == '' && w.username != '') {
+				if ((w.network == 'github') && w.url == '' && w.username != '') {
 					w.url = "https://github.com/" + w.username;
 				}
 			});
