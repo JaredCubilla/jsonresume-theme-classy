@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/JaredCubilla/jsonresume-theme-classy.git"
+    "url": "https://github.com/reubenkcoutinho/jsonresume-theme-printclassy.git"
   },
   "keywords": [
     "json",
@@ -27,7 +27,7 @@
     "jsonresume-theme"
   ],
   "bugs": {
-    "url": "https://github.com/JaredCubilla/jsonresume-theme-classy/issues"
+    "url": "https://github.com/reubenkcoutinho/jsonresume-theme-printclassy/issues"
   },
-  "homepage": "https://github.com/JaredCubilla/jsonresume-theme-classy"
+  "homepage": "https://github.com/reubenkcoutinho/jsonresume-theme-printclassy"
 }
