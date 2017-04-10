@@ -1,12 +1,12 @@
 {
-  "name": "jsonresume-theme-classy",
-  "version": "1.1.0",
-  "description": "An uber-classy JSONResume theme, that is print friendly too",
+  "name": "jsonresume-theme-printclassy",
+  "version": "1.0.1",
+  "description": "An uber-classy JSONResume theme, that is print friendly too!",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Reuben",
+  "author": "Reuben Coutinho",
   "license": "MIT",
   "dependencies": {
     "dateformat": "^2.0.0",

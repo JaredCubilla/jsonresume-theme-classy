@@ -5,7 +5,9 @@
 		<h1>{{resume.basics.name}}</h1>
 		<h3 class= "label">{{resume.basics.label}}</h3>
 		<div class= "contact-header">
+				{{#if resume.basics.location.address}}
 				<span class="address">{{resume.basics.location.address}},</span>
+				{{/if}}
 				{{resume.basics.location.city}}, {{resume.basics.location.region}}, {{resume.basics.location.countryCode}}
 		</div>
 		<br>
