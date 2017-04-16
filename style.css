@@ -127,6 +127,10 @@ footer {
     display: none;
 }
 
+footer p{
+    text-align: center;
+}
+
 .address {
     display: block
 }
@@ -193,6 +197,8 @@ section.skills {
         bottom:0
     }
     footer p {
+        text-align: center;
+        align-self: center;
         font-size: 0.75em;
     }
     .address {
@@ -218,5 +224,9 @@ section.skills {
     }
     .skills{
         margin-bottom: 10px;
+    }
+
+    .main{
+        padding:10px;
     }
 }
