@@ -1,0 +1,24 @@
+{{#if resume.volunteer.length}}
+<section id="volunteer">
+	<h2><i class="fa fa-child left"></i> VOLUNTEER WORK</h2>
+	{{#each resume.volunteer}}
+	<h3>{{position}}, {{organization}}</h3>
+	<h4>{{startDate}} {{#if endDate}}
+		<span class="endDate">
+				- {{endDate}}
+			</span> {{else}}
+		<span class="endDate">
+				- Present
+			</span> {{/if}}
+	</h4>
+	<p>{{summary}}<br><a href="{{website}}" target="_blank">{{website}}</a></p>
+	{{#if highlights.length}}
+	<h4>HIGHLIGHTS</h4>
+	<ul class="highlights">
+		{{#each highlights}}
+		<li>{{.}}</li>
+		{{/each}}
+	</ul>
+	{{/if}} {{/each}}
+</section>
+{{/if}}

@@ -1,0 +1,14 @@
+{{#if resume.awards.length}}
+<section id="awards">
+	<h2><i class="fa fa-trophy left"></i> AWARDS</h2>
+	{{#each resume.awards}}
+	<h3>{{title}} - {{awarder}}</h3>
+	{{#if date}}
+	<h4>
+		{{date}}
+	</h4>
+	{{/if}}
+	<p>{{summary}}</p>
+	{{/each}}
+</section>
+{{/if}}

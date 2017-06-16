@@ -1,0 +1,38 @@
+		<header>
+		{{#if resume.basics.picture}}
+			<img src= "{{resume.basics.picture}}" class= "picture">
+		{{/if}}
+		<h1>{{resume.basics.name}}</h1>
+		<h3 class= "label">{{resume.basics.label}}</h3>
+		<div class= "contact-header">
+				{{#if resume.basics.location.address}}
+				<span class="address">{{resume.basics.location.address}},</span>
+				{{/if}}
+				{{resume.basics.location.city}}, {{resume.basics.location.region}}, {{resume.basics.location.countryCode}}
+		</div>
+		<br>
+		<div id= "contact">
+			{{#if resume.basics.email}}
+			<div class= "contact-header">
+				EMAIL <span class= "responsive-hidden">&bull;</span> <span class= "responsive-show"><br></span><a href= "mailto:{{resume.basics.email}}" target= "_blank">{{resume.basics.email}}</a> <span class= "responsive-show"><br><br></span>
+			</div>
+			{{/if}}
+			{{#if resume.basics.phone}}
+			<div class= "contact-header">
+				PHONE <span class= "responsive-hidden">&bull;</span> <span class= "responsive-show"><br></span><a href= "tel:{{resume.basics.phone}}" target= "_blank">{{resume.basics.phone}}</a> <span class= "responsive-show"><br><br></span>
+			</div>
+			{{/if }}
+			{{#if resume.basics.website}}
+			<div class= "contact-header">
+				WEBSITE <span class= "responsive-hidden">&bull;</span> <span class= "responsive-show"><br></span><a href= "{{resume.basics.website}}" target= "_blank">{{resume.basics.website}}</a> <span class= "responsive-show"><br><br></span>
+			</div>
+			{{/if}}
+		</div>
+		<br>
+		<div id= "profiles">
+			<div class= "contact-header">PROFILES</div>
+			{{#resume.basics.profiles}}
+			<p class= "profile"><a href= "{{url}}" target= "_blank" class= "profile"><i class="fa fa-{{network}} left"></i>/{{username}}</a>&nbsp;&nbsp;&nbsp;</p>
+			{{/resume.basics.profiles}}
+		</div>		
+	</header>

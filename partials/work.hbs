@@ -1,0 +1,28 @@
+{{#if resume.work.length}}
+<section id= "work">
+	<h2><i class= "fa fa-suitcase left"></i> WORK EXPERIENCE</h2>
+	{{#each resume.work}}
+		<div class= "job">
+			<h3>{{position}}, {{company}}</h3>
+			<h4>{{startDate}} {{#if endDate}}
+			<span class="endDate">
+				- {{endDate}}
+			</span>
+			{{else}}
+			<span class="endDate">
+				- Present
+			</span>
+			{{/if}}</h4>
+			<p>{{summary}}</p>
+			{{#if highlights.length}}
+			<h4>HIGHLIGHTS</h4>
+			<ul class="highlights">
+				{{#each highlights}}
+				<li>{{.}}</li>
+				{{/each}}
+			</ul>
+			{{/if}}
+		</div>
+	{{/each}}
+</section>
+{{/if}}

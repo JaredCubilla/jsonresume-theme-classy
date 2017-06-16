@@ -1,22 +1,23 @@
 {
-  "name": "jsonresume-theme-classy",
-  "version": "1.0.8",
-  "description": "An uber-classy JSONResume theme.",
+  "name": "jsonresume-theme-printclassy",
+  "version": "1.1.1",
+  "description": "An uber-classy JSONResume theme, that is print friendly too!",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Jared Cubilla",
+  "author": "Reuben Coutinho",
   "license": "MIT",
   "dependencies": {
+    "dateformat": "^2.0.0",
+    "handlebars": "^4.0.6",
     "lodash": "^2.4.1",
-    "mustache": "^0.8.2",
     "resume-schema": "0.0.16",
     "tarball-extract": "0.0.3"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/JaredCubilla/jsonresume-theme-classy.git"
+    "url": "https://github.com/reubenkcoutinho/jsonresume-theme-printclassy.git"
   },
   "keywords": [
     "json",
@@ -26,7 +27,7 @@
     "jsonresume-theme"
   ],
   "bugs": {
-    "url": "https://github.com/JaredCubilla/jsonresume-theme-classy/issues"
+    "url": "https://github.com/reubenkcoutinho/jsonresume-theme-printclassy/issues"
   },
-  "homepage": "https://github.com/JaredCubilla/jsonresume-theme-classy"
+  "homepage": "https://github.com/reubenkcoutinho/jsonresume-theme-printclassy"
 }
