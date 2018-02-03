@@ -151,7 +151,7 @@
 		<h1>{{basics.capitalName}}</h1>
 		<h3 class= "label">{{basics.capitalLabel}}</h3>
 		<div class= "contact-header">
-				{{basics.location.city}}, {{basics.location.region}}, {{basics.location.countryCode}}<br>
+				{{basics.location.city}}, {{basics.location.countryCode}}<br>
 				{{basics.location.address}}
 			</div>
 		<div id= "contact">
