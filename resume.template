@@ -151,7 +151,7 @@
 		<h1>{{basics.capitalName}}</h1>
 		<h3 class= "label">{{basics.capitalLabel}}</h3>
 		<div class= "contact-header">
-				{{basics.location.city}}, {{basics.location.region}}, {{basics.location.countryCode}}<br>
+				{{basics.location.city}}, {{basics.location.countryCode}}<br>
 				{{basics.location.address}}
 			</div>
 		<div id= "contact">
@@ -172,6 +172,7 @@
 			</div>
 			{{/websiteBool}}
 		</div>
+		{{#profilesBool}}
 		<br>
 		<div id= "profiles">
 			<div class= "contact-header">PROFILES</div><br>
@@ -179,6 +180,7 @@
 			<p class= "profile"><a href= "{{url}}" target= "_blank" class= "profile">{{network}}</a></p>
 			{{/basics.profiles}}
 		</div>		
+		{{/profilesBool}}
 	</div>
 	<div class= "main">
 		{{#aboutBool}}
@@ -194,8 +196,8 @@
 			<h2><i class= "fa fa-suitcase left"></i> WORK EXPERIENCE</h2>
 			{{#work}}
 				<div class= "job">
-					<h3>{{position}}, {{company}}</h3>
-					<h4>{{startDateMonth}}{{startDateYear}} - {{endDateMonth}}{{endDateYear}}</h4>
+          <h3>{{position}}<br /><small>{{company}}</small></h3>
+					<h4>{{startDateMonth}}{{startDateYear}} – {{endDateMonth}}{{endDateYear}}</h4>
 					<p>{{summary}}</p>
 					{{#workHighlights}}
 					<h4>HIGHLIGHTS</h4>
@@ -213,8 +215,8 @@
 		<div id= "volunteer">
 			<h2><i class= "fa fa-child left"></i> VOLUNTEER WORK</h2>
 			{{#volunteer}}
-			<h3>{{position}}, {{organization}}</h3>
-			<h4>{{startDateMonth}}{{startDateYear}} - {{endDateMonth}}{{endDateYear}}</h4>
+      <h3>{{position}}<br><small>{{organization}}</small></h3>
+			<h4>{{startDateMonth}}{{startDateYear}} – {{endDateMonth}}{{endDateYear}}</h4>
 			<p>{{summary}}<br><a href= "{{website}}" target= "_blank">{{website}}</a></p>
 			{{#volunterHighlights}}
 			<h4>HIGHLIGHTS</h4>
@@ -242,11 +244,10 @@
 		<div id= "education">
 			<h2><i class= "fa fa-graduation-cap left"></i> EDUCATION</h2>
 			{{#education}}
-				<h3>{{studyType}}, {{area}} - {{institution}}</h3>
-				<h4>{{startDateMonth}}{{startDateYear}} - {{endDateMonth}}{{endDateYear}}{{#gpaBool}}<br>
-				GPA: {{gpa}}{{/gpaBool}}</h4>
+      <h3>{{studyType}}, {{area}}<br><small>{{institution}}</small></h3>
+				<h4>{{startDateMonth}}{{startDateYear}} – {{endDateMonth}}{{endDateYear}}{{#gpaBool}}<br>
+				Award: {{gpa}}{{/gpaBool}}</h4>
 				{{#educationCourses}}
-				<h4>COURSES</h4>
 				<ul>
 					{{#courses}}
 					<li>{{.}}</li>

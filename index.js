@@ -36,6 +36,7 @@ resumeObject.basics.capitalLabel = (resumeObject.basics.label).toUpperCase();
 	if (resumeObject.basics.profiles) {
 		if (resumeObject.basics.profiles[0].network) {
 			_.each(resumeObject.basics.profiles, function(w){
+			  resumeObject.profilesBool = true;
 				if ((w.network == 'Twitter' || w.network == 'twitter') && w.url == '' && w.username != '') {
 					w.url = "https://twitter.com/" + w.username;
 				}
