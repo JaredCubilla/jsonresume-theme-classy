@@ -9,8 +9,8 @@
   "author": "Jared Cubilla",
   "license": "MIT",
   "dependencies": {
-    "lodash": "^2.4.1",
-    "mustache": "^0.8.2",
+    "lodash": "^4.17.21",
+    "mustache": "^4.1.0",
     "resume-schema": "0.0.16",
     "tarball-extract": "0.0.3"
   },
